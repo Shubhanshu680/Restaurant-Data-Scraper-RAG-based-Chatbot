@@ -280,13 +280,18 @@ This repository provides a robust, extensible pipeline for collecting, cleaning,
 
 # 4) RAG Chatbot
 
+## Overview
+
+**Purpose:**  
+To automate the preparation of restaurant and menu data from multiple sources, resulting in a unified, clean dataset ready for chatbot training, RAG models, and other food/restaurant AI applications.
+
 ## How This Data Powers a RAG Chatbot
 
-**Retrieval Augmented Generation (RAG) chatbots** need a structured, searchable knowledge base to answer user queries accurately. This notebook’s output is designed to be used as that knowledge base:
+**Retrieval Augmented Generation (RAG) chatbots** require a structured, searchable knowledge base to answer user queries accurately. This notebook’s output is designed for that purpose:
 
 - **Each row** represents a unique menu item, linked to its restaurant and enriched with details like price and description.
 - **The dataset can be indexed** using vector stores (e.g., FAISS, ChromaDB) for semantic search.
-- **When a user asks a question** (“What are the vegetarian options at Capital Kitchen?”), the RAG system retrieves the most relevant rows from this dataset and feeds them as context to a language model for answer generation.
+- **When a user asks a question** (e.g., “What are the vegetarian options at Capital Kitchen?”), the RAG system retrieves the most relevant rows from this dataset and feeds them as context to a language model for answer generation.
 - **The data format ensures** the chatbot can answer questions about:
     - Menu items and prices
     - Restaurant details and hours
@@ -294,35 +299,42 @@ This repository provides a robust, extensible pipeline for collecting, cleaning,
     - Comparisons between restaurants
     - Dietary options and more
 
+## How to Run
 
-## How to Use
-
-1. **Open the notebook** in Google Colab or Jupyter.
-2. **Upload your raw menu and restaurant files** to the environment.
-3. **Run all cells in order.**  
+1. **Open the notebook** in [Google Colab](https://colab.research.google.com/) or Jupyter.
+2. **Select the T4 GPU runtime** in Colab:
+    - Go to `Runtime` → `Change runtime type` → Set "Hardware accelerator" to **GPU** (preferably T4).
+3. **Upload your raw menu and restaurant files** to the environment.
+4. **Run all cells in order.**  
    The notebook will guide you through each processing step.
-4. **Download the final cleaned CSV** for use in chatbot training, analytics, or other AI applications.
+5. **Download the final cleaned CSV** for use in chatbot training, analytics, or other AI applications.
+
+---
+
+## Why Use a T4 GPU?
+
+- **Performance:**  
+  RAG chatbot data processing often involves large datasets and the use of transformer-based language models (for embedding, retrieval, or answer generation). These models are computationally intensive.
+- **Compatibility:**  
+  Many modern NLP libraries (e.g., HuggingFace Transformers, LangChain) are optimized for GPU acceleration, and Colab’s T4 GPU provides a good balance of speed and memory for such tasks.
+- **Memory:**  
+  T4 GPUs offer enough VRAM to handle large models and batch processing, reducing the risk of out-of-memory errors common with smaller GPUs or CPU-only runtimes.
+- **Stability:**  
+  Running on T4 ensures your notebook can process data and generate embeddings efficiently, supporting real-time or large-scale chatbot applications.
+
+**Note:**  
+Running this notebook on CPU or a smaller GPU may result in very slow processing, timeouts, or memory errors—especially when working with transformer models or large menu datasets.
 
 ---
 
 ## Applications
 
-- Training retrieval-augmented generation (RAG) chatbots for restaurant Q&A.
+- Training RAG chatbots for restaurant Q&A.
 - Fine-tuning language models on menu/restaurant data.
 - Restaurant analytics and recommendation systems.
 - Building structured knowledge bases for food and hospitality AI projects.
 
----
-
-## Notes
-
-- The notebook is extensible: add new data sources by following the same cleaning and merging steps.
-- Handles both standard and non-standard menu formats, as long as the columns are mapped correctly.
-- The resulting dataset is ready for use as a knowledge base in RAG pipelines or other NLP/ML systems.
-
----
-
 **Summary:**  
-`MY_FOOD_CHATBOT.ipynb` streamlines collecting, cleaning, and merging restaurant menu data, making it ready for modern AI and chatbot applications. It ensures your data is consistent, complete, and easy to use for downstream tasks.
+`MY_FOOD_CHATBOT.ipynb` streamlines the process of collecting, cleaning, and merging restaurant menu data, making it ready for modern RAG and AI chatbot applications. Running it on a T4 GPU is essential for efficient, reliable processing of large datasets and transformer models.
 
 
