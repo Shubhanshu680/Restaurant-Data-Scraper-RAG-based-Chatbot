@@ -20,7 +20,60 @@ Here is a **brief overview of the selected hotels for scraping**
 
 -*Summary*: The selected hotels are high-end establishments in major Indian cities (New Delhi, Mumbai, Kolkata), primarily within ITC and Taj group properties. They offer a range of cuisines, with a special emphasis on innovative South Indian and multi-cuisine offerings, and are known for their premium dining experiences and unique culinary presentations.
 
-Also, scraping data was relatively easy with all authentic information, along with the detailed menu and descriptions.
+Also, scraping data with all authentic information, along with the detailed menu and descriptions, was relatively easy.
+
+# Capital Kitchen Restaurant Scraper
+
+This project demonstrates web scraping and menu extraction for **Capital Kitchen**, a multi-cuisine restaurant at Taj Palace, New Delhi.
+
+## Project Overview
+
+- **Goal:**  
+  Extract restaurant details (name, location, contact, timings) and menu items (from the official PDF menu links) for Capital Kitchen.
+- **Tech Stack:**  
+  Python, Requests, BeautifulSoup, PyPDF2, Pandas
+
+## How It Works
+
+1. **Scrape Restaurant Details:**  
+   The script fetches the restaurant’s name, address, contact info, and dining hours directly from the [official website](https://www.tajhotels.com/en-in/hotels/taj-palace-new-delhi/restaurants/capital-kitchen).
+
+2. **Find and Download Menu PDF:**  
+   The code locates the downloadable menu PDF link on the page.
+
+3. **Extract Menu Items:**  
+   Menu items, prices, and descriptions are parsed from the PDF using PyPDF2.
+
+4. **Save Results:**  
+   - Restaurant details are saved as `restaurant_details.json`
+   - Menu items are saved as `capital_kitchen_menu.csv` and `capital_kitchen_menu.json`
+
+## Example Output
+
+```
+Name: Capital Kitchen
+Location: 2 Sardar Patel Marg Diplomatic Enclave, New Delhi, 110021, India
+Contact: 1-800-111-825 | reservations@ihcltata.com
+
+Timings:
+ Breakfast: 6:30 am to 10:30 am
+ Lunch: 12:30 pm to 2:45 pm
+ Dinner: 7:00 pm to 11:00 pm
+
+Sample Menu Item:
+| section    | item                | price  | description                                    |
+|------------|---------------------|--------|------------------------------------------------|
+| Menu Items | PIZZA PEPPERONI     | ₹1450  | Pork pepperoni, crushed tomatoes, mozzarella   |
+```
+
+## How to Run
+
+1. Clone this repo or open the notebook in Google Colab.
+2. Install dependencies:
+   ```python
+   !pip install requests beautifulsoup4 PyPDF2 pandas
+   ```
+3. Run all cells in `capital_Scrap-1.ipynb`
 
 
 
