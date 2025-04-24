@@ -1,4 +1,5 @@
-# Restaurant-Data-Scraper-RAG-based-Chatbot repository contains web scraping and menu extraction notebooks for various restaurants, along with the extracted data and ChatBOT Notebooks
+# Restaurant-Data-Scraper-RAG-based-Chatbot 
+### This repository contains web scraping and menu extraction notebooks for various restaurants, along with the extracted data and ChatBOT Notebooks
 
 ## Contents
 
