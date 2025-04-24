@@ -280,10 +280,20 @@ This repository provides a robust, extensible pipeline for collecting, cleaning,
 
 # 4) RAG Chatbot
 
-## Overview
+## How This Data Powers a RAG Chatbot
 
-**Purpose:**  
-To automate the process of preparing restaurant and menu data from multiple sources, resulting in a unified, clean dataset ready for chatbot training, RAG models, and other food/restaurant AI applications.
+**Retrieval Augmented Generation (RAG) chatbots** need a structured, searchable knowledge base to answer user queries accurately. This notebook’s output is designed to be used as that knowledge base:
+
+- **Each row** represents a unique menu item, linked to its restaurant and enriched with details like price and description.
+- **The dataset can be indexed** using vector stores (e.g., FAISS, ChromaDB) for semantic search.
+- **When a user asks a question** (“What are the vegetarian options at Capital Kitchen?”), the RAG system retrieves the most relevant rows from this dataset and feeds them as context to a language model for answer generation.
+- **The data format ensures** the chatbot can answer questions about:
+    - Menu items and prices
+    - Restaurant details and hours
+    - Cuisine types
+    - Comparisons between restaurants
+    - Dietary options and more
+
 
 ## How to Use
 
