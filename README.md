@@ -280,3 +280,39 @@ This repository provides a robust, extensible pipeline for collecting, cleaning,
 
 # 4) RAG Chatbot
 
+## Overview
+
+**Purpose:**  
+To automate the process of preparing restaurant and menu data from multiple sources, resulting in a unified, clean dataset ready for chatbot training, RAG models, and other food/restaurant AI applications.
+
+## How to Use
+
+1. **Open the notebook** in Google Colab or Jupyter.
+2. **Upload your raw menu and restaurant files** to the environment.
+3. **Run all cells in order.**  
+   The notebook will guide you through each processing step.
+4. **Download the final cleaned CSV** for use in chatbot training, analytics, or other AI applications.
+
+---
+
+## Applications
+
+- Training retrieval-augmented generation (RAG) chatbots for restaurant Q&A.
+- Fine-tuning language models on menu/restaurant data.
+- Restaurant analytics and recommendation systems.
+- Building structured knowledge bases for food and hospitality AI projects.
+
+---
+
+## Notes
+
+- The notebook is extensible: add new data sources by following the same cleaning and merging steps.
+- Handles both standard and non-standard menu formats, as long as the columns are mapped correctly.
+- The resulting dataset is ready for use as a knowledge base in RAG pipelines or other NLP/ML systems.
+
+---
+
+**Summary:**  
+`MY_FOOD_CHATBOT.ipynb` streamlines collecting, cleaning, and merging restaurant menu data, making it ready for modern AI and chatbot applications. It ensures your data is consistent, complete, and easy to use for downstream tasks.
+
+
