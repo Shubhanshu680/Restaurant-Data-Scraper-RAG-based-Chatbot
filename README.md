@@ -327,6 +327,13 @@ Running this notebook on CPU or a smaller GPU may result in very slow processing
 
 ---
 
+##Some results
+![image](https://github.com/user-attachments/assets/e8f1994a-9d9e-4835-9271-643ec32a1a44)
+
+![image](https://github.com/user-attachments/assets/bb5bf9ad-d1c6-451d-b928-61113a1a5772)
+
+![image](https://github.com/user-attachments/assets/38a025c2-8979-4f1b-a650-12e8e7fbc2c0)
+
 ## Applications
 
 - Training RAG chatbots for restaurant Q&A.
