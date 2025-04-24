@@ -276,3 +276,7 @@ This menu extractor is designed for rapid, reliable extraction and cleaning of r
 
 **Summary:**  
 This repository provides a robust, extensible pipeline for collecting, cleaning, and merging multi-restaurant menu and metadata, ready for use in AI/ML training or analytics.
+
+
+# 4) RAG Chatbot
+
