@@ -7,7 +7,7 @@
 - Data Preprocessing
 - RAG Chatbot 
 
-## 1) Web Scraping
+# 1) Web Scraping
 Here is a **brief overview of the selected hotels for scraping**
 
 - **Avartana (ITC Maurya, New Delhi & ITC Maratha, Mumbai)**
@@ -123,3 +123,66 @@ Sample Menu Item:
 |------------|----------------|--------|-------------------------------|
 | Appetizers | Potato cracker | ₹600   | with tamarind ghee glaze      |
 ```
+# 2) Menu Extractor
+
+This provides a reproducible workflow for extracting restaurant menu data from structured or semi-structured sources (such as PDFs, websites, or HTML tables) into a clean, tabular format for further analysis or application use.
+
+## Overview
+
+- **Goal:** Automatically extract menu sections, item names, prices, and descriptions from restaurant menu sources.
+- **Output:** A structured table (DataFrame/CSV) with columns: `section`, `name`, `price`, `description`.
+
+## How It Works
+
+1. **Input:**  
+   - The notebook accepts menu data from PDFS, HTML, or preformatted text sources.
+2. **Extraction:**  
+   - Parses menu sections, item names, prices, and descriptions using Python (e.g., regular expressions, BeautifulSoup, PyPDF2).
+3. **Cleaning:**  
+   - Handles missing values, removes extraneous text, and standardises price formats.
+4. **Output:**  
+   - Saves the cleaned menu data to a CSV file for downstream use (e.g., analytics, chatbot training).
+
+## Example Output
+
+| section     | name                   | price  | description                                  |
+|-------------|------------------------|--------|-----------------------------------------------|
+| Menu Items  | PIZZA PEPPERONI        | ₹1450  | Pork pepperoni, crushed tomatoes, mozzarella  |
+| Menu Items  | THE CAPITAL PIZZA      | ₹1150  | Barbecued chicken, red onion, fresh coriander |
+| Menu Items  | CLASSIC PIZZA MARGHERITA| ₹1150 | Mozzarella, fresh basil, tomato sauce         |
+| Menu Items  | PIZZA FUNGI            | ₹1150  | N/A                                          |
+
+## How to Use
+
+1. **Open the notebook:**  
+   Open `Menu_Extract.ipynb` in Jupyter or Google Colab.
+
+2. **Install dependencies:**  
+   Make sure you have the required Python packages:
+   ```python
+   !pip install pandas beautifulsoup4 PyPDF2
+   ```
+
+3. **Run the notebook:**  
+   Follow the cells in order to extract, clean, and export menu data.
+
+4. **Exported data:**  
+   The cleaned menu will be saved as a CSV file in the working directory.
+
+## Project Structure
+
+```
+Menu_Extract.ipynb        # Main notebook for menu extraction
+menu_data.csv             # (example) Output CSV with extracted menu
+```
+
+## Notes
+
+- The extraction logic may need minor adjustments for different menu formats or layouts.
+- For dynamic (JavaScript) web menus, consider using Selenium.
+- For scanned PDFs, OCR (e.g., pytesseract) may be required.
+
+
+**Brief:**  
+This menu extractor is designed for rapid, reliable extraction and cleaning of restaurant menu data for data science, analytics, or AI applications.
+
