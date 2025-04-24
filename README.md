@@ -10,6 +10,11 @@
 
 # 1) Web Scraping
 Here is a **brief overview of the selected hotels for scraping**
+I used beautifulsoup for the below scraping approach, there are multiple ways for this scraping
+- One is using beautisoup
+- Another approach which I could have used is using curl to scrape the html content and then regular expression in perl/python language to get specific tag details.
+Different approaches can be used for specific scraping depending on the site's build.
+
 
 - **Avartana (ITC Maurya, New Delhi & ITC Maratha, Mumbai)**
 - **Southern Culinary Mosaics (ITC Royal Bengal, Kolkata)**
