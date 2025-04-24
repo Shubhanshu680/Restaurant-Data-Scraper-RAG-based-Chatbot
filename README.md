@@ -77,3 +77,49 @@ Sample Menu Item:
 
 
 
+##Other restaurant scrapers (Rick’s Bar, Spicy Duck, Avartana ITC Maurya, Avartana ITC Maratha, Avartana ITC Kolkata, Capital Kitchen):##
+We can use a common code but using different specific codes for these different websites helped us get more dependable data and information for our knowledge base
+
+## Overview
+
+- **Goal**: Automatically extract up-to-date restaurant information (name, location, contact, cuisine, timings) and menu items (dish names, prices, descriptions) for (Rick’s Bar, Spicy Duck, Avartana ITC Maurya, Avartana ITC Maratha, Avartana ITC Kolkata, Capital Kitchen).
+- **Technologies**: Python, Requests, BeautifulSoup, Pandas, (optionally) PyPDF2 for PDF menu extraction.
+
+## How It Works
+
+1. **Scrape Restaurant Details**  
+   The script fetches the restaurant’s name, address, contact info, cuisine, and dining hours from the official website.
+
+2. **Extract Menu Items**  
+   - If the menu is available as HTML, dish names, prices, and descriptions are parsed directly.
+   - If the menu is a downloadable PDF, the script uses PyPDF2 to extract menu items.
+
+3. **Save Results**  
+   - Restaurant details are saved as `[restaurant_name]_details.json`
+   - Menu items are saved as `[restaurant_name]_menu.csv` and `[restaurant_name]_menu.json`
+
+   
+## Usage
+
+1. Clone this repository or open the notebook in Google Colab.
+2. Install required libraries:
+   ```python
+   !pip install requests beautifulsoup4 pandas PyPDF2
+   ```
+3. Run the notebook or script.  
+   The output files will be saved in the current directory.
+
+## Example Output
+
+```
+Name: [Restaurant Name]
+Location: [Address]
+Contact: [Phone] | [Email]
+Cuisine: [Cuisine]
+Timings: [Timings]
+
+Sample Menu Item:
+| section    | item           | price  | description                   |
+|------------|----------------|--------|-------------------------------|
+| Appetizers | Potato cracker | ₹600   | with tamarind ghee glaze      |
+```
