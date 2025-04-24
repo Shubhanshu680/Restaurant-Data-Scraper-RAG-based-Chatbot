@@ -187,3 +187,92 @@ menu_data.csv             # (example) Output CSV with extracted menu
 **Brief:**  
 This menu extractor is designed for rapid, reliable extraction and cleaning of restaurant menu data for data science, analytics, or AI applications.
 
+# 3) Data Processing for Training
+
+## Overview
+
+- **Goal:**  
+  To create a unified, structured dataset of restaurant details and menu items from multiple sources (web scraping, PDFs, JSON, CSV) suitable for training retrieval-augmented generation (RAG) models or other NLP systems.
+
+- **Data Sources:**  
+  - In JSON format, restaurant details (name, location, contact, timings, cuisine).
+  - Menu items (section, item, price, description, location) in CSV format, merged from various scrapers and extractors.
+
+---
+
+## Data Files
+
+- **Restaurant Details JSONs:**  
+  - `restaurant_details.json`, `spicy_duck_details.json`, `emperors_lounge_details.json`, `ricks_bar_details.json`, `avartana_itcmaurya_details.json`, `avartana_itcmaratha_details.json`, `avartana_details.json`
+    - Each file contains structured information about a specific restaurant, including name, location, contact, cuisine, timings, and (where available) menu URLs.
+
+- **Menu Data CSVs:**  
+  - `final_merged_menu.csv`, `final_merged_menu_with_location.csv`, `cleaned_FINAL_BY_ME_Merged.csv`
+    - These files contain menu items for all restaurants with columns such as `restaurant`, `section`, `item`, `price`, `description`, and (optionally) `location`, `latitude`, `longitude`.
+
+---
+
+## Data Processing Workflow
+
+1. **Scraping & Extraction:**  
+   - Restaurant details are scraped from official websites and stored as JSON files.
+   - Menu items are extracted from PDFs, HTML pages, or web APIs, and saved as CSV files.
+
+2. **Cleaning & Standardization:**  
+   - All menu CSVs are cleaned to ensure consistent columns (e.g., `restaurant`, `item`, `price`, `description`).
+   - Missing values are handled, and prices are standardised to a common format (e.g., "₹1450").
+   - Locations and coordinates are added where available.
+
+3. **Merging:**  
+   - Individual restaurant menu files are merged into a single CSV (`final_merged_menu.csv` or `cleaned_FINAL_BY_ME_Merged.csv`) for unified access.
+   - Each menu item is associated with its restaurant and, where possible, its location.
+
+4. **Enrichment:**  
+   - Additional metadata (e.g., latitude, longitude, cuisine) is added from the details JSONS or external sources.
+
+5. **Ready for Training:**  
+   - The merged and cleaned CSV is now suitable for:
+     - Training retrieval-augmented generation (RAG) chatbots
+     - Fine-tuning language models for restaurant Q&A
+
+---
+
+## Example: Unified Menu Data
+
+| restaurant        | section                | item                   | price  | description                                      | location                    |
+|-------------------|------------------------|------------------------|--------|--------------------------------------------------|-----------------------------|
+| Capital Kitchen   | Menu Items             | SEAFOOD PIZZA          | ₹1450  | Calamari, shrimp, smoked salmon, confit garlic   |                             |
+| Capital Kitchen   | FROM THE STONE OVEN    | CAESAR SALAD           | ₹875   | Romaine lettuce, crispy bacon, grilled chicken   |                             |
+| Rick's Bar        | Menu Items             | Glenfarclas            | ₹1954  |                                                  |                             |
+| Emperor Lounge    |                        | Curried vegetable turnover | 350 | Puff pastry, mix vegetable masala                |                             |
+| Kolkata (ITC Royal Bengal) |               | Potato cracker         | N/A    | with tamarind ghee glaze                         | Kolkata (ITC Royal Bengal)  |
+
+---
+
+## How to Use
+
+1. **For Data Science/ML Training:**
+   - Load the merged CSV (e.g., `cleaned_FINAL_BY_ME_Merged.csv`) using pandas:
+     ```python
+     import pandas as pd
+     df = pd.read_csv('cleaned_FINAL_BY_ME_Merged.csv')
+     ```
+   - Use the JSON files to enrich menu items with metadata (e.g., cuisine, timings).
+
+2. **For RAG Chatbot Training:**
+   - Use the merged CSV as your knowledge base.
+   - Each row (menu item) can be indexed for retrieval.
+   - Restaurant details JSONs can be used for context enrichment.
+
+---
+
+## Notes
+
+- **Missing Data:** Some menu items or restaurants may have missing fields (e.g., price or description) due to source limitations.
+- **Location Data:** Where available, latitude and longitude are included for geospatial applications.
+- **Extensibility:** The pipeline can be extended to new restaurants by adding new JSON/CSV files and re-running the merge/cleaning scripts.
+
+---
+
+**Summary:**  
+This repository provides a robust, extensible pipeline for collecting, cleaning, and merging multi-restaurant menu and metadata, ready for use in AI/ML training or analytics.
