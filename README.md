@@ -77,9 +77,9 @@ Sample Menu Item:
 
 
 
-#Other restaurant scrapers (Rick’s Bar, Spicy Duck, Avartana ITC Maurya, Avartana ITC Maratha, Avartana ITC Kolkata, Capital Kitchen): We can use a standard code, but using different specific codes for these different websites helped us get more dependable data and information for our knowledge base.#
+##Other restaurant scrapers (Rick’s Bar, Spicy Duck, Avartana ITC Maurya, Avartana ITC Maratha, Avartana ITC Kolkata, Capital Kitchen): We can use a standard code, but using different specific codes for these different websites helped us get more dependable data and information for our knowledge base.
 
-## Overview
+### Overview
 
 - **Goal**: Automatically extract up-to-date restaurant information (name, location, contact, cuisine, timings) and menu items (dish names, prices, descriptions) for (Rick’s Bar, Spicy Duck, Avartana ITC Maurya, Avartana ITC Maratha, Avartana ITC Kolkata, Capital Kitchen).
 - **Technologies**: Python, Requests, BeautifulSoup, Pandas, (optionally) PyPDF2 for PDF menu extraction.
