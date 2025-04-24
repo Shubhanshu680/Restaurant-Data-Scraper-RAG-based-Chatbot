@@ -331,7 +331,14 @@ Running this notebook on CPU or a smaller GPU may result in very slow processing
 
 
 
+
+![image](https://github.com/user-attachments/assets/5e9de3b3-f1db-439d-9fdc-2340156e5892)
+
+
+
+
 ![image](https://github.com/user-attachments/assets/e8f1994a-9d9e-4835-9271-643ec32a1a44)
+
 
 
 
@@ -339,7 +346,9 @@ Running this notebook on CPU or a smaller GPU may result in very slow processing
 
 
 
+
 ![image](https://github.com/user-attachments/assets/38a025c2-8979-4f1b-a650-12e8e7fbc2c0)
+
 
 
 
