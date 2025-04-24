@@ -77,8 +77,7 @@ Sample Menu Item:
 
 
 
-##Other restaurant scrapers (Rick’s Bar, Spicy Duck, Avartana ITC Maurya, Avartana ITC Maratha, Avartana ITC Kolkata, Capital Kitchen):
-We can use a common code but using different specific codes for these different websites helped us get more dependable data and information for our knowledge base.##
+#Other restaurant scrapers (Rick’s Bar, Spicy Duck, Avartana ITC Maurya, Avartana ITC Maratha, Avartana ITC Kolkata, Capital Kitchen): We can use a standard code, but using different specific codes for these different websites helped us get more dependable data and information for our knowledge base.#
 
 ## Overview
 
